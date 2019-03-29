@@ -18,7 +18,7 @@ public class openmenuonclick : MonoBehaviour
     public void openMenu()
     {
         
-        switch(DefaultTrackableEventHandler.lastimagename)
+        switch(ModifiedTrackableEventHandler.lastimagename)
         {
             case "Image Briquet":
                 titre.text = ObjectsConstants.BRIQUET[0];
