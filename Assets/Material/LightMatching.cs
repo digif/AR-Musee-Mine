@@ -48,13 +48,14 @@ public class LightMatching : MonoBehaviour
     public float waitTime = 1.0f;
     private float timer = 0.0f;
     private GameObject[] lightso;
-    private Light[] lights = new Light[5];
+    private Light[] lights;
 
 
     void Start()
     {
 
         lightso = GameObject.FindGameObjectsWithTag("light");
+        lights = new Light[lightso.Length];
         for (int i = 0; i < lightso.Length; i++)
         {
             lights[i] = lightso[i].GetComponent<Light>();
