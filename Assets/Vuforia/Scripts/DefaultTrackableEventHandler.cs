@@ -6,6 +6,7 @@ All Rights Reserved.
 Confidential and Proprietary - Protected under copyright and other laws.
 ==============================================================================*/
 
+using System.Collections;
 using UnityEngine;
 using Vuforia;
 
@@ -22,13 +23,18 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     protected TrackableBehaviour mTrackableBehaviour;
     protected TrackableBehaviour.Status m_PreviousStatus;
     protected TrackableBehaviour.Status m_NewStatus;
-
+    //private Canvas canvas;
+    protected UnityEngine.UI.Image info_image;
+    protected int count_images=0;
+    protected ArrayList images_list = new ArrayList();
     #endregion // PROTECTED_MEMBER_VARIABLES
 
     #region UNITY_MONOBEHAVIOUR_METHODS
 
     protected virtual void Start()
     {
+        info_image = GameObject.Find("Info image").GetComponent<UnityEngine.UI.Image>();
+        info_image.enabled = false;
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
@@ -83,6 +89,12 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     protected virtual void OnTrackingFound()
     {
+        count_images++;
+        info_image.enabled=true;
+        if(!images_list.Contains(mTrackableBehaviour.name))
+        {
+            images_list.Add(mTrackableBehaviour.name);
+        }
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
@@ -103,6 +115,13 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
     protected virtual void OnTrackingLost()
     {
+        count_images--;
+        images_list.Remove(mTrackableBehaviour.name);
+        if (images_list.Count==0)
+        {
+            info_image.enabled=false;
+        }
+        
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
