@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vuforia:
     vuforiaLicenseKey: AaDMyl3/////AAABmYeAg5zS30wGtVtrjWRuy5kE531N+gA+QVA2eNHsiRAUfPruOS6v6lh+duwvO1Z/0lm8AWrRuYnlRuFx3H6EnIDV4PKxIoI0B8M9FQQItI9wS6eQoZccNL7KYjsa3fW3pJCQcWtBX1KQCSUM+OeqoE5twqXgZPX2lwE4xhXqZJGUz49iEFqgCrR3PRBTdtGgseDW+BTyVigLJc6k3uE+3ZjWVI7UC3WV11hPqllsu3bY5TUqAvta+j3mYwc97tLfU/of9WXBvXdWU2O1rEGEdyqnC4yS+zGQJibmomFK37DvWq6MCMxTAG+uO3CEpxdD2uKOmFMSb7v63xl6Cfmnph8MyEbIm8/badas8WozeM3s
-    ufoLicenseKey: QVNtKy9wci8vLy8vQUFBQUtPcFEzWEpyOGt1L3FIaU9RNjJHWVBoMEJyOVFqcjRzRTJWRFM4cTEwWXNBRE1jSTYya1hhTUhrSVpBcWZDVGo3NWZHNEsyVk1HcWpLNUpwVEQ5U3dGeWdiTmF3NHNIUmt4b3craGZXcTdMem8zYm85dTVqQkFSTkZsQXp6dVQ1c2pIQ2JYRDFVbVRlVGkvNTlWc1BvU3VaN2dveituOElLaHNvcWxMaDNsQVBmOGU4YnozU0VaTEdHclhmanJnalNOMGM0Wktkd3Vld0VHeWF2bW0zQW5EekEzd1V0NFlzNEtVZkppTVJTU1RXbEJ2MnArdXpPVkN4Z29TRU9QWTdZbmMvb2JYVEg3VlNUVzV3WHRVQWZuWlhrTGFPc2sweXlLQlBmaS8yb1QvY2c0OUNrRXduTFpZMXpkSFdYUFZBNnNkWDdOa2tkb0Y3d1UvemJTTlhSbFdXaVpxZDYzZGRYMHdKcGRxVW5yd1o=
+    ufoLicenseKey: QVEzYUlTUC8vLy8vQUFBQUtDMXhxY3lRVUVSL2lQMnFVQkJVTTNLQ3J1cVNSUGVtSkI3RVVvS1BmeWE5cXdNQ01YazRNTmxFUjNtWlk5S3hsNmh4M1hSc3cyMW5zMmlBT1NCZUwyNHc2SjRGUTZaSVhrRTFHK2d2bGFRSmtSdFV6VEtvb1FramxqU1BndUFMbnVPanljQXpBTTltYXFQL2diMERSdi9wcGVnRGxvODlVaXRPbjl3aWNuVTJiOG9UeGJTd1BaaVpZL3dqZForS0lnRTJpdzl1bzYrRnVJN3ViUjIxSVVSZy9WVlprR0RJaFRlUm5DMEpRaUsvcjEvSFRJdHZuS1lDVWZOWjRFc3B2MVNsQlNtWldIV0RGNFB0ZkNrVzJlcGpZcDgyMG10aXB3Vk02bnVTQzZSU2ZmZm5lMFNTWHNmM2RIaG5aRmlSUWZZMWVtd2Ezcy9xY3o2Z3JNY3VHcWk4aWJBUm1lQW9wSjJDUjVqU3RsS3Q=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 1
-    maxSimultaneousObjectTargets: 1
+    maxSimultaneousImageTargets: 2
+    maxSimultaneousObjectTargets: 2
     useDelayedLoadingObjectTargets: 0
-    version: 8.1.7
-    eulaAcceptedVersions: '{"Values":["0.0","8.0","7.5","8.1"]}'
+    cameraDirection: 0
+    mirrorVideoBackground: 0
+    version: 8.0.10
+    eulaAcceptedVersions: '{"Values":["0.0","8.0"]}'
   digitalEyewear:
     cameraOffset: 0.06
     distortionRenderingLayer: 31
@@ -53,8 +55,8 @@ MonoBehaviour:
     matteShader: {fileID: 4800000, guid: 66d0d78a3000021448b598bb54a3bfdf, type: 3}
     videoBackgroundEnabled: 1
   deviceTracker:
-    autoInitTracker: 0
-    autoStartTracker: 0
+    autoInitTracker: 1
+    autoStartTracker: 1
     trackingMode: 1
     posePrediction: 0
     modelCorrectionMode: 0
@@ -65,5 +67,6 @@ MonoBehaviour:
     autoStartTracker: 0
   webcam:
     deviceNameSetInEditor: 
+    flipHorizontally: 0
     turnOffWebCam: 0
     renderTextureLayer: 30
