@@ -5,6 +5,7 @@ using Vuforia;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 
+
 /*       *************************** HOW TO USE **********************************
 
     Just Attach to your AR camera or Create an empty GameObject in your scene and attach this script
@@ -65,6 +66,8 @@ public class LightMatching : MonoBehaviour
         // set up pixel format
 
         mPixelFormat = PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
+        //mPixelFormat = PIXEL_FORMAT.RGB565;
+        
 
 
         // API for getting Vuforia Callbacks as of Unity 2018.1.0f2. 
