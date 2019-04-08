@@ -17,8 +17,8 @@ MonoBehaviour:
     ufoLicenseKey: QVEzYUlTUC8vLy8vQUFBQUtDMXhxY3lRVUVSL2lQMnFVQkJVTTNLQ3J1cVNSUGVtSkI3RVVvS1BmeWE5cXdNQ01YazRNTmxFUjNtWlk5S3hsNmh4M1hSc3cyMW5zMmlBT1NCZUwyNHc2SjRGUTZaSVhrRTFHK2d2bGFRSmtSdFV6VEtvb1FramxqU1BndUFMbnVPanljQXpBTTltYXFQL2diMERSdi9wcGVnRGxvODlVaXRPbjl3aWNuVTJiOG9UeGJTd1BaaVpZL3dqZForS0lnRTJpdzl1bzYrRnVJN3ViUjIxSVVSZy9WVlprR0RJaFRlUm5DMEpRaUsvcjEvSFRJdHZuS1lDVWZOWjRFc3B2MVNsQlNtWldIV0RGNFB0ZkNrVzJlcGpZcDgyMG10aXB3Vk02bnVTQzZSU2ZmZm5lMFNTWHNmM2RIaG5aRmlSUWZZMWVtd2Ezcy9xY3o2Z3JNY3VHcWk4aWJBUm1lQW9wSjJDUjVqU3RsS3Q=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 2
-    maxSimultaneousObjectTargets: 2
+    maxSimultaneousImageTargets: 1
+    maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
     version: 8.1.7
     eulaAcceptedVersions: '{"Values":["0.0","8.0","7.5","8.1"]}'
@@ -56,7 +56,7 @@ MonoBehaviour:
     autoInitTracker: 1
     autoStartTracker: 1
     trackingMode: 1
-    posePrediction: 0
+    posePrediction: 1
     modelCorrectionMode: 0
     modelTransformEnabled: 0
     modelTransform: {x: 0, y: 0.1, z: -0.1}

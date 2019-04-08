@@ -34,7 +34,7 @@ public class ModifiedTrackableEventHandler : MonoBehaviour, ITrackableEventHandl
 
     protected virtual void Start()
     {
-        info_image = GameObject.Find("Info image").GetComponent<UnityEngine.UI.Image>();
+        info_image = GameObject.Find("Info").GetComponent<UnityEngine.UI.Image>();
         info_image.enabled = false;
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
