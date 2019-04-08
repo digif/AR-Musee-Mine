@@ -34,7 +34,6 @@ public class CreateCubemap : MonoBehaviour
             c.Apply();
             
             RenderSettings.skybox.SetTexture("_Im", c);
-            Debug.Log(RenderSettings.skybox.GetTexture("_Im"));
             //GameObject C1 = GameObject.Find("Grisoumetree");
 
             //Renderer rend = C1.GetComponent<Renderer>();

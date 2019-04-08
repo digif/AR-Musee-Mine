@@ -126,6 +126,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9128579001661906152}
+        m_MethodName: openMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &138438600181690688
@@ -140,6 +151,7 @@ GameObject:
   - component: {fileID: 8675644419073149956}
   - component: {fileID: 3461265506801973457}
   - component: {fileID: 7953089708000874376}
+  - component: {fileID: 9128579001661906152}
   m_Layer: 5
   m_Name: InfoCanvas
   m_TagString: Untagged
@@ -217,6 +229,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2465a30f8e2f73f4d9782ca890c96e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9128579001661906152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138438600181690688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00401c557b258b45ab233edff5374bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titre: {fileID: 2904661181625796692}
+  description: {fileID: 5835185827473718310}
 --- !u!1 &5216673696144864733
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,3 +713,27 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5682359974385125432}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2904661181625796692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7391710729272000620, guid: f406871ed20a2b541acd119dc991f9be,
+    type: 3}
+  m_PrefabInstance: {fileID: 5682359974385125432}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5835185827473718310 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2171142742777361438, guid: f406871ed20a2b541acd119dc991f9be,
+    type: 3}
+  m_PrefabInstance: {fileID: 5682359974385125432}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
