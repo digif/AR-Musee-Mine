@@ -5,19 +5,11 @@ using UnityEngine.UI;
 
 public class openmenuonclick : MonoBehaviour
 {
-    private Canvas canvas;
     public Text titre;
     public Text description;
-    // Start is called before the first frame update
-    void Start()
-    {
-       canvas = GameObject.FindGameObjectWithTag("canvas").GetComponent<Canvas>();
-        canvas.enabled = false;
-    }
 
     public void openMenu()
     {
-        
         switch(ModifiedTrackableEventHandler.lastimagename)
         {
             case "Image Briquet":
@@ -40,10 +32,6 @@ public class openmenuonclick : MonoBehaviour
                 titre.text = ObjectsConstants.LAMPISTERIE[0];
                 description.text = ObjectsConstants.LAMPISTERIE[1];
                 break;
-            
-
-
         }
-        canvas.enabled=true;
     }
 }
