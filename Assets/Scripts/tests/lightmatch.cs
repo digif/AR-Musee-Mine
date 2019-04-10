@@ -41,6 +41,7 @@ public class lightmatch : MonoBehaviour
             RenderTexture.active = renderTexture;
             texture2D.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
             texture2D.Apply();
+            
 
             RenderTexture.active = currentRT;
             GameObject.Find("Quad").GetComponent<Renderer>().material.mainTexture = texture2D;
@@ -51,7 +52,7 @@ public class lightmatch : MonoBehaviour
             Color32[] pixels = texture2D.GetPixels32();
             for (int i = 0; i < pixels.Length; i++)
             {
-                //Debug.Log(pixels[i].r+", "+pixels[i].g+", "+pixels[i].b);
+
                 red += pixels[i].r;
                 green += pixels[i].g;
                 blue += pixels[i].b;
@@ -69,7 +70,7 @@ public class lightmatch : MonoBehaviour
 
             Color average = new Color(red/255, green/255, blue/255);
             Debug.Log(red + ", " + green + ", " + blue);
-            text.text = texture2D.format+" "+texture2D.filterMode;
+            text.text = red + ", " + green + ", " + blue;
             RenderSettings.ambientLight = average;
             RenderSettings.ambientIntensity = intensity;
         }
