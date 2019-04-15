@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 3461265506801973457}
   - component: {fileID: 7953089708000874376}
   - component: {fileID: 9128579001661906152}
+  - component: {fileID: 4639207829020381560}
   m_Layer: 5
   m_Name: InfoCanvas
   m_TagString: Untagged
@@ -243,6 +244,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titre: {fileID: 2904661181625796692}
   description: {fileID: 5835185827473718310}
+--- !u!114 &4639207829020381560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138438600181690688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a693400ea0b4ee4eaefcc2c84111691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backChangeScene: 0
+  targetScene: 
+  targetMenu: {fileID: 8426886546937549712}
 --- !u!1 &5216673696144864733
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +481,7 @@ GameObject:
   - component: {fileID: 1980935983537332607}
   - component: {fileID: 702177188264004900}
   - component: {fileID: 247762590880940547}
+  - component: {fileID: 78670252622853770}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -543,6 +560,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2465a30f8e2f73f4d9782ca890c96e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &78670252622853770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426886546937549712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a693400ea0b4ee4eaefcc2c84111691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backChangeScene: 1
+  targetScene: Menu
+  targetMenu: {fileID: 0}
 --- !u!1001 &5682359974385125432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -550,10 +582,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9149834250803950984}
     m_Modifications:
-    - target: {fileID: 7547638079456922268, guid: f406871ed20a2b541acd119dc991f9be,
+    - target: {fileID: 7391710729272000620, guid: f406871ed20a2b541acd119dc991f9be,
         type: 3}
-      propertyPath: m_Name
-      value: Panel
+      propertyPath: m_Text
+      value: object
       objectReference: {fileID: 0}
     - target: {fileID: 8105534645362153469, guid: f406871ed20a2b541acd119dc991f9be,
         type: 3}
@@ -660,10 +692,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7391710729272000620, guid: f406871ed20a2b541acd119dc991f9be,
+    - target: {fileID: 7547638079456922268, guid: f406871ed20a2b541acd119dc991f9be,
         type: 3}
-      propertyPath: m_Text
-      value: object
+      propertyPath: m_Name
+      value: Panel
       objectReference: {fileID: 0}
     - target: {fileID: 5094795191455394229, guid: f406871ed20a2b541acd119dc991f9be,
         type: 3}
