@@ -123,6 +123,7 @@ public class ModifiedTrackableEventHandler : MonoBehaviour, ITrackableEventHandl
             info_image.enabled = false;
         }
 
+
         var rendererComponents = GetComponentsInChildren<Renderer>(true);
         var colliderComponents = GetComponentsInChildren<Collider>(true);
         var canvasComponents = GetComponentsInChildren<Canvas>(true);
@@ -138,6 +139,9 @@ public class ModifiedTrackableEventHandler : MonoBehaviour, ITrackableEventHandl
         // Disable canvas':
         foreach (var component in canvasComponents)
             component.enabled = false;
+        
+        // Disable light
+        //if (mTrackableBehaviour.name == "")
     }
 
     #endregion // PROTECTED_METHODS
