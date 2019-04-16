@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="Pot_graisse_Mire" size="0.200000 0.226667" />
+    <ImageTarget name="Lampe_Mire" size="0.200000 0.144023" />
+    <ImageTarget name="Hache_Mire" size="0.200000 0.260560" />
+    <ImageTarget name="Gourde_graisse_Mire" size="0.200000 0.219200" />
+    <ImageTarget name="Cle_Mire" size="0.200000 0.226000" />
+    <ImageTarget name="Burin_Mire" size="0.200000 0.224133" />
+    <ImageTarget name="Burette_02_Mire" size="0.200000 0.151667" />
+    <ImageTarget name="Burette_01_Mire" size="0.200000 0.200000" />
+    <ImageTarget name="Bidon_02_Mire" size="0.200000 0.200000" />
+    <ImageTarget name="Bidon_01_Mire" size="0.200000 0.199667" />
     <ImageTarget name="Pelle_Mire" size="0.200000 0.204248" />
     <ImageTarget name="Pioche_Mire" size="0.200000 0.205353" />
     <ImageTarget name="Casque_Mire" size="0.200000 0.201613" />
