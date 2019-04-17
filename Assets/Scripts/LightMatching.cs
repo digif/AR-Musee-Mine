@@ -65,8 +65,8 @@ public class LightMatching : MonoBehaviour
         GraphicsSettings.lightsUseColorTemperature = true;
         // set up pixel format
 
-        mPixelFormat = PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
-        //mPixelFormat = PIXEL_FORMAT.RGB565;
+        //mPixelFormat = PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
+        mPixelFormat = PIXEL_FORMAT.RGB565;
         
 
 
