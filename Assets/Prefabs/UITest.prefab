@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5431289090389160634}
   - component: {fileID: 3916453244143725615}
   - component: {fileID: 2897886460933929150}
+  - component: {fileID: 4326305407095925652}
   m_Layer: 5
   m_Name: TestCanvas
   m_TagString: Untagged
@@ -89,6 +90,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2465a30f8e2f73f4d9782ca890c96e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4326305407095925652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031878154594968272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a693400ea0b4ee4eaefcc2c84111691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backChangeScene: 1
+  targetScene: Menu
+  targetMenu: {fileID: 0}
 --- !u!1 &5746639269542231774
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,10 +193,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2546563019624657446}
     m_Modifications:
-    - target: {fileID: 7547638079456922268, guid: f406871ed20a2b541acd119dc991f9be,
+    - target: {fileID: 7391710729272000620, guid: f406871ed20a2b541acd119dc991f9be,
         type: 3}
-      propertyPath: m_Name
-      value: Panel
+      propertyPath: m_Text
+      value: test
       objectReference: {fileID: 0}
     - target: {fileID: 8105534645362153469, guid: f406871ed20a2b541acd119dc991f9be,
         type: 3}
@@ -287,10 +303,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7391710729272000620, guid: f406871ed20a2b541acd119dc991f9be,
+    - target: {fileID: 7547638079456922268, guid: f406871ed20a2b541acd119dc991f9be,
         type: 3}
-      propertyPath: m_Text
-      value: test
+      propertyPath: m_Name
+      value: Panel
       objectReference: {fileID: 0}
     - target: {fileID: 5094795191455394229, guid: f406871ed20a2b541acd119dc991f9be,
         type: 3}
@@ -341,11 +357,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 346161628754275}
     m_Modifications:
-    - target: {fileID: 8648844657039248998, guid: de3e26d2689c8644e801b31262c02d9a,
-        type: 3}
-      propertyPath: m_Name
-      value: Background
-      objectReference: {fileID: 0}
     - target: {fileID: 1393232989289124562, guid: de3e26d2689c8644e801b31262c02d9a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -450,6 +461,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8648844657039248998, guid: de3e26d2689c8644e801b31262c02d9a,
+        type: 3}
+      propertyPath: m_Name
+      value: Background
       objectReference: {fileID: 0}
     - target: {fileID: 1565710483784815319, guid: de3e26d2689c8644e801b31262c02d9a,
         type: 3}
