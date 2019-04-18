@@ -20,7 +20,7 @@ using UnityEngine.Rendering;
          ***************************   ENJOY!   **********************************
 
 */
-public class LightMatching : MonoBehaviour
+public class LightMatching_old : MonoBehaviour
 {
     private bool mAccessCameraImage = true;
     // camera image pixel 

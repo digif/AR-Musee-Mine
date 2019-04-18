@@ -5,14 +5,13 @@ using Vuforia;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 
-/*
- * The goal of this script is to make the objects color match to the ambient lightning captured by camera
- * To do that, we retrieve the average color of the image produced by the camera and apply it as the ambient light of the scene
- * Please note that depending on which device it is used, this script may decrease significantly the framerate of the app.
- * This script has to be attached to the ARCamera.
- */
-
-public class LightMatchingCopie : MonoBehaviour
+///<summary>
+/// The goal of this script is to make the objects color match to the ambient lightning captured by camera
+/// To do that, we retrieve the average color of the image produced by the camera and apply it as the ambient light of the scene
+/// Please note that depending on which device it is used, this script may decrease significantly the framerate of the app.
+/// This script has to be attached to the ARCamera.
+///</summary>
+public class LightMatching : MonoBehaviour
 {
     // Camera image pixel 
     private PIXEL_FORMAT mPixelFormat = PIXEL_FORMAT.UNKNOWN_FORMAT;

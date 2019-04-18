@@ -24,9 +24,11 @@ public class ModifiedTrackableEventHandler : MonoBehaviour, ITrackableEventHandl
     protected TrackableBehaviour mTrackableBehaviour;
     protected TrackableBehaviour.Status m_PreviousStatus;
     protected TrackableBehaviour.Status m_NewStatus;
-    //private Canvas canvas;
+
+    //Info button of the object
     protected UnityEngine.UI.Image info_image;
-    protected int count_images = 0;
+    
+    //List of all Images Target shown on screen
     protected ArrayList images_list = new ArrayList();
     #endregion // PROTECTED_MEMBER_VARIABLES
 
@@ -90,8 +92,9 @@ public class ModifiedTrackableEventHandler : MonoBehaviour, ITrackableEventHandl
 
     protected virtual void OnTrackingFound()
     {
-        count_images++;
+        // Enable info button when a target is detected
         info_image.enabled = true;
+        //Add the image target name to the list
         if (!images_list.Contains(mTrackableBehaviour.name))
         {
             images_list.Add(mTrackableBehaviour.name);
@@ -116,10 +119,11 @@ public class ModifiedTrackableEventHandler : MonoBehaviour, ITrackableEventHandl
 
     protected virtual void OnTrackingLost()
     {
-        count_images--;
+        //Remove the image target name from the list when lost
         images_list.Remove(mTrackableBehaviour.name);
+        // Disable info button if no more objects shown on screen
         if (images_list.Count == 0)
-        {
+        {          
             info_image.enabled = false;
         }
 
