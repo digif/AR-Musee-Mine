@@ -5,45 +5,24 @@ using Vuforia;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 
+/*
+ * The goal of this script is to make the objects color match to the ambient lightning captured by camera
+ * To do that, we retrieve the average color of the image produced by the camera and apply it as the ambient light of the scene
+ * Please note that depending on which device it is used, this script may decrease significantly the framerate of the app.
+ * This script has to be attached to the ARCamera.
+ */
 
-/*       *************************** HOW TO USE **********************************
-
-    Just Attach to your AR camera or Create an empty GameObject in your scene and attach this script
-    Most likely you'll have at least one light in your sceen. add your light to the public Light To Effect var in the editor.
-    You'll need to modify the code if you have more than one light you'd like to affect. 
-
-    To see get dev/debugging readouts create a screen overlay canvas with a couple of text objects. add them to the lightoutput vars in the editor
-    
-    Can varify that a this light estimation script works in iphone7, Samsung S6, and pixel
-    Should also work in the Unity editor as well.
-
-         ***************************   ENJOY!   **********************************
-
-*/
 public class LightMatchingCopie : MonoBehaviour
 {
-    private bool mAccessCameraImage = true;
-    // camera image pixel 
-    private PIXEL_FORMAT mPixelFormat = PIXEL_FORMAT.UNKNOWN_FORMAT;// or RGBA8888, RGB888, RGB565, YUV, GRAYSCALE
-    // Boolean flag telling whether the pixel format has been registered
+    // Camera image pixel 
+    private PIXEL_FORMAT mPixelFormat = PIXEL_FORMAT.UNKNOWN_FORMAT;
+    // Boolean telling whether the pixel format has been registered or not
     private bool mFormatRegistered = false;
-    // during development you might want to set up a couple of text objects in a UI screen overlay for debugging
+    // Used for debugging to get color values
     public Text colortext;
-    // boolean used to start debugging 
+    // Boolean used to start debugging 
     public bool debugging;
-    //This is the directional light I was using in my scene. 
-    
-    // This color variable is being used to change the ambient light in the scene. goes from white to black depending on brightness of lights
-    // You might want to thake that out depending on how your scene is looking
-    private Color lightColor = new Color(1, 1, 1, 1);
-    private float ligtColorNum;
-    //Use this to make adjustments if your light estimation is looking too bright or too dark.  I don't know what a double is.
-    public double intensityModifier = 10.0;
-    //Use this to make light temperature adjustments
-    public int temperatureModifier = 3000;
-    // To be honest I'm not sure what these are for. I cobbled this code from a bunch of different scripts. It's not messing anything up so I'm leaving in 
-    public float? intensity { get; private set; }
-    public float? colorTemperature { get; private set; }
+    // Minimum time in second between each update of the light. It has been set to 1 to preserve performances
     public float waitTime = 1.0f;
     private float timer = 0.0f;
 
@@ -53,33 +32,33 @@ public class LightMatchingCopie : MonoBehaviour
 
     void Start()
     {
+        
         // Register Vuforia life-cycle callbacks:
         VuforiaARController.Instance.RegisterVuforiaStartedCallback(OnVuforiaStarted);
         // not sure if this is really needed but leaving in just to be safe
         VuforiaARController.Instance.RegisterOnPauseCallback(OnPause);
         //This behaves much like Update() - Most of the magic happens in OnTrackablesUpdated
         VuforiaARController.Instance.RegisterTrackablesUpdatedCallback(OnTrackablesUpdated);
+
+        //Set  image format to RGB888 for mobiles, a 1 byte per color format (3byte per pixel)
         mPixelFormat = PIXEL_FORMAT.RGB888;
     }
-    /// <summary>
-    /// Called when Vuforia is started
-    /// </summary>
+    
+    // Called when Vuforia is started    
     private void OnVuforiaStarted()
     {
-        // Try register camera image format
+        // Try to register camera frame format
         if (CameraDevice.Instance.SetFrameFormat(mPixelFormat, true))
-        {
-            
+        {           
             Debug.Log("Successfully registered pixel format " + mPixelFormat.ToString());
             mFormatRegistered = true;
         }
         else
         {
-            Debug.LogError("Failed to register pixel format " + mPixelFormat.ToString() +
-                "\n the format may be unsupported by your device;" +
-                "\n consider using a different pixel format.");
+            Debug.LogError("Failed to register pixel format " + mPixelFormat.ToString());
             mFormatRegistered = false;
         }
+        
     }
     /// <summary>
     /// Called when app is paused / resumed
@@ -97,53 +76,51 @@ public class LightMatchingCopie : MonoBehaviour
             RegisterFormat();
         }
     }
-    /// <summary>
-    /// Called each time the Vuforia state is updated
-    /// </summary>
+   
+    // Called each time the Vuforia state is updated
     private void OnTrackablesUpdated()
     {
         
         timer += Time.deltaTime;
         if(timer>waitTime) {
+            
             timer = 0;
+            // If format has been registered
             if (mFormatRegistered)
             {
-                if (mAccessCameraImage)
+                // Get Camera image with the specified pixel format                  
+                Vuforia.Image image = CameraDevice.Instance.GetCameraImage(mPixelFormat);
+                if (image != null)
                 {
-                    
-                    Vuforia.Image image = CameraDevice.Instance.GetCameraImage(mPixelFormat);
-                    if (image != null)
+                    //Store all the image information in a byte array
+                    byte[] pixels = image.Pixels;
+                    if (pixels != null && pixels.Length > 0)
                     {
-
-                        string imageInfo = mPixelFormat + " image: \n";
-                        imageInfo += " size: " + image.Width + " x " + image.Height + "\n";
-                        imageInfo += " bufferSize: " + image.BufferWidth + " x " + image.BufferHeight + "\n";
-                        imageInfo += " stride: " + image.Stride;
-                        Debug.Log(imageInfo);
-
-                        byte[] pixels = image.Pixels;
-                        if (pixels != null && pixels.Length > 0)
-                        {
-                            Debug.Log("Image pixels: " + pixels[0] + "," + pixels[1] + "," + pixels[2] + ",...");
-                            Color[] colors = new Color[pixels.Length / 2];
-                            if (mPixelFormat == PIXEL_FORMAT.RGB565) {
+                        
+                        /*Color[] colors = new Color[pixels.Length / 2];
+                        if (mPixelFormat == PIXEL_FORMAT.RGB565) {
                                 
 
-                                for (var i = 0; i<pixels.Length; i += 2)
-                                 {
-                                    colors[i / 2] = new Color((pixels[0] & 0x1f) / (float)0x1f,
-                                        ((pixels[1] & 0x07) | ((pixels[0] & 0xe0) >> 5)) / (float)0x3f,
-                                        ((pixels[1] & 0xf8) >> 3) / (float)0x1f);
-
-                                }
-                            }
-                            else {
-                                Color32[] colorArray = new Color32[pixels.Length / 3];
-                                for (int i = 0; i < pixels.Length; i += 3)
+                            for (var i = 0; i<pixels.Length; i += 2)
                                 {
-                                    Color32 color = new Color32(pixels[i + 0], pixels[i + 1], pixels[i + 2],255);//, pixels[i + 3]
-                                    colorArray[i / 3] = color;
-                                }
+                                colors[i / 2] = new Color((pixels[0] & 0x1f) / (float)0x1f,
+                                    ((pixels[1] & 0x07) | ((pixels[0] & 0xe0) >> 5)) / (float)0x3f,
+                                    ((pixels[1] & 0xf8) >> 3) / (float)0x1f);
+
+                            }*/
+                        }
+                        if(mPixelFormat==PIXEL_FORMAT.RGB888) {
+                            //Create a color array for which its size corresponds to the number of pixel of the image
+                            Color32[] colorArray = new Color32[pixels.Length / 3];
+                            for (int i = 0; i < pixels.Length; i += 3)
+                            {
+                                //Group bytes by 3 (R, G and B) and create a new color for each group
+                                Color32 color = new Color32(pixels[i + 0], pixels[i + 1], pixels[i + 2], 255);
+                                colorArray[i / 3] = color;
+                                    
+                                    
+                            }
+                            //This part get the average color for each component
                             float red = 0;
                             float green = 0;
                             float blue = 0;
@@ -158,22 +135,31 @@ public class LightMatchingCopie : MonoBehaviour
                             green /= pixels.Length/4;
                             blue /= pixels.Length/4;
 
+                            // Create this average color
                             Color average = new Color(red/255, green/255, blue/255);
-                            colortext.text = red + " " + green + " " + blue;
+                            
+                            //Apply this color as the ambient light
                             RenderSettings.ambientLight = average;
-                            }
-                            
 
-                            
+
+                            //Used for debugging  by getting color values
+                            if(debugging)
+                            {
+                                colortext.text = red + " " + green + " " + blue;
+                            }
+                                
+                                
                         }
+                            
+                            
                     }
                 }
+                
             }
         }
-    }
-    /// <summary>
-    /// Unregister the camera pixel format (e.g. call this when app is paused)
-    /// </summary>
+    
+    
+    //Unregister the pixel format
     private void UnregisterFormat()
     {
         Debug.Log("Unregistering camera pixel format " + mPixelFormat.ToString());
@@ -181,6 +167,7 @@ public class LightMatchingCopie : MonoBehaviour
         mFormatRegistered = false;
     }
 
+    //Unregister all pixel formats
     private void DisableAllFormats()
     {
         CameraDevice.Instance.SetFrameFormat(PIXEL_FORMAT.RGBA8888, false);
@@ -196,9 +183,8 @@ public class LightMatchingCopie : MonoBehaviour
 
 
     }
-    /// <summary>
-    /// Register the camera pixel format
-    /// </summary>
+    
+    //Register the pixel format
     private void RegisterFormat()
     {
         if (CameraDevice.Instance.SetFrameFormat(mPixelFormat, true))

@@ -446,10 +446,10 @@ GameObject:
   m_Component:
   - component: {fileID: 90599865}
   - component: {fileID: 90599864}
-  - component: {fileID: 90599863}
   - component: {fileID: 90599862}
   - component: {fileID: 90599861}
   - component: {fileID: 90599860}
+  - component: {fileID: 90599863}
   m_Layer: 0
   m_Name: Image Bidon2
   m_TagString: Untagged
@@ -1453,10 +1453,10 @@ GameObject:
   m_Component:
   - component: {fileID: 330258389}
   - component: {fileID: 330258388}
-  - component: {fileID: 330258387}
   - component: {fileID: 330258386}
   - component: {fileID: 330258385}
   - component: {fileID: 330258384}
+  - component: {fileID: 330258387}
   m_Layer: 0
   m_Name: Image Burette1
   m_TagString: Untagged
@@ -2966,10 +2966,10 @@ GameObject:
   m_Component:
   - component: {fileID: 860328761}
   - component: {fileID: 860328760}
-  - component: {fileID: 860328759}
   - component: {fileID: 860328758}
   - component: {fileID: 860328757}
   - component: {fileID: 860328756}
+  - component: {fileID: 860328759}
   m_Layer: 0
   m_Name: Image Burin
   m_TagString: Untagged
@@ -3978,7 +3978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd6291b90448ef4dbed236f66d30174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 3
+  waitTime: 1
   intensity: 1
   text: {fileID: 1329699394}
 --- !u!114 &1036704121
@@ -4008,10 +4008,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1054269035}
   - component: {fileID: 1054269034}
-  - component: {fileID: 1054269033}
   - component: {fileID: 1054269032}
   - component: {fileID: 1054269031}
   - component: {fileID: 1054269030}
+  - component: {fileID: 1054269033}
   m_Layer: 0
   m_Name: Image Pot
   m_TagString: Untagged
@@ -4568,7 +4568,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.32177413, y: 0, z: 0.5}
+      m_Extent: {x: 0.5, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -4644,7 +4644,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 94bfa4be00000000000000bf00000000ffff7f3f00000000000000000000000094bfa4be000000000000003f00000000ffff7f3f00000000000000000000803f94bfa43e00000000000000bf00000000ffff7f3f000000000000803f0000000094bfa43e000000000000003f00000000ffff7f3f000000000000803f0000803f
+    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -4699,7 +4699,7 @@ Mesh:
     m_UVInfo: 0
   m_LocalAABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.32177413, y: 0, z: 0.5}
+    m_Extent: {x: 0.5, y: 0, z: 0.5}
   m_MeshUsageFlags: 0
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
@@ -5094,6 +5094,34 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1268125279}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1276633261
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Casque_MireMaterial
+
+    12504'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 35d9fecea88148bbb9e06ef88d92a59d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &1290050397
 GameObject:
   m_ObjectHideFlags: 0
@@ -5883,10 +5911,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1428444590}
   - component: {fileID: 1428444589}
-  - component: {fileID: 1428444588}
   - component: {fileID: 1428444587}
   - component: {fileID: 1428444586}
   - component: {fileID: 1428444585}
+  - component: {fileID: 1428444588}
   m_Layer: 0
   m_Name: Image Bidon1
   m_TagString: Untagged
@@ -6514,10 +6542,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1581091927}
   - component: {fileID: 1581091926}
-  - component: {fileID: 1581091925}
   - component: {fileID: 1581091924}
   - component: {fileID: 1581091923}
   - component: {fileID: 1581091922}
+  - component: {fileID: 1581091925}
   m_Layer: 0
   m_Name: Image Gourde
   m_TagString: Untagged
@@ -6629,6 +6657,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1582860112
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Bricquet_MireMaterial
+
+    12058'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a89611f9f85f4027b42d0ba41e7ed226, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1 &1588489805
 GameObject:
   m_ObjectHideFlags: 0
@@ -7179,10 +7235,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1847092393}
   - component: {fileID: 1847092392}
-  - component: {fileID: 1847092391}
   - component: {fileID: 1847092390}
   - component: {fileID: 1847092389}
   - component: {fileID: 1847092388}
+  - component: {fileID: 1847092391}
   m_Layer: 0
   m_Name: Image Burette2
   m_TagString: Untagged
@@ -7301,7 +7357,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 'Cle_MireMaterial
+  m_Name: 'Lampe_MireMaterial
 
     12170'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
@@ -7316,7 +7372,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d7771bd5f1654f86af99e05691747254, type: 3}
+        m_Texture: {fileID: 2800000, guid: c73fac2f1ffa4e4ebf37dcdf385559b2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -8174,10 +8230,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2078130858}
   - component: {fileID: 2078130857}
-  - component: {fileID: 2078130856}
   - component: {fileID: 2078130855}
   - component: {fileID: 2078130854}
   - component: {fileID: 2078130853}
+  - component: {fileID: 2078130856}
   m_Layer: 0
   m_Name: Image Cle
   m_TagString: Untagged
@@ -8327,10 +8383,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2105271438}
   - component: {fileID: 2105271437}
-  - component: {fileID: 2105271436}
   - component: {fileID: 2105271435}
   - component: {fileID: 2105271434}
   - component: {fileID: 2105271433}
+  - component: {fileID: 2105271436}
   m_Layer: 0
   m_Name: Image Lampe
   m_TagString: Untagged

@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Vuforia;
+
 public class lightmatch : MonoBehaviour
 {
     private float timer = 0f;
@@ -21,9 +24,11 @@ public class lightmatch : MonoBehaviour
         if (timer > waitTime)
         {
             timer = 0;
+            
             Renderer rend2 = GameObject.Find("BackgroundPlane").GetComponent<Renderer>();
-            Texture maintex = rend2.material.mainTexture;
-
+            Texture2D maintex = (Texture2D) rend2.material.GetTexture("_MainTex");
+            Debug.Log(rend2.material.mainTexture.isReadable);
+            
 
 
             /*byte[] imraw = im.GetRawTextureData();
@@ -35,8 +40,10 @@ public class lightmatch : MonoBehaviour
 
             RenderTexture currentRT = RenderTexture.active;
 
-            RenderTexture renderTexture = new RenderTexture(maintex.width, maintex.height, 32);
-            Graphics.Blit(maintex, renderTexture);
+            RenderTexture renderTexture = new RenderTexture(maintex.width, maintex.height, 32, RenderTextureFormat.ARGB32);
+            //Graphics.Blit(maintex, renderTexture);
+            Graphics.Blit(maintex,renderTexture);
+            
 
             RenderTexture.active = renderTexture;
             texture2D.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
@@ -44,7 +51,17 @@ public class lightmatch : MonoBehaviour
             
 
             RenderTexture.active = currentRT;
-            GameObject.Find("Quad").GetComponent<Renderer>().material.mainTexture = texture2D;
+            //GameObject.Find("Quad").GetComponent<Renderer>().material.mainTexture = rend2.material.GetTexture("_UVTex");
+            if(VuforiaRenderer.Instance.IsVideoBackgroundInfoAvailable())
+            {
+               // VuforiaRenderer.Instance.GetVideoBackgroundConfig();
+                GameObject.Find("Quad").GetComponent<Renderer>().material.mainTexture = VuforiaRenderer.Instance.VideoBackgroundTexture;
+
+            }
+           // GameObject.Find("Quad").GetComponent<Renderer>().material.mainTexture = VuforiaRenderer.Instance.;
+            //Texture rt=VuforiaRenderer.Instance.VideoBackgroundTexture;
+
+
 
             float red = 0;
             float green = 0;
@@ -75,4 +92,5 @@ public class lightmatch : MonoBehaviour
             RenderSettings.ambientIntensity = intensity;
         }
     }
+    
 }
