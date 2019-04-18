@@ -157,7 +157,7 @@ public class LightMatchingCopie : MonoBehaviour
                 
             }
         }
-    }
+    
     
     //Unregister the pixel format
     private void UnregisterFormat()
