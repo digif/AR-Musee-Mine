@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class openmenuonclick : MonoBehaviour
+public class OpenMenuOnClick : MonoBehaviour
 {
     public Text titre;
     public Text description;
