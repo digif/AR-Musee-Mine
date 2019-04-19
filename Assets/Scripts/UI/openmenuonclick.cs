@@ -10,7 +10,7 @@ public class OpenMenuOnClick : MonoBehaviour
 
     // Méthode qui permet d'afficher une description de l'objet qui est en cours de visualisation. Elle est lancée quand
     // quand un objet apparaît.
-    public void openMenu()
+    public void OpenMenu()
     {
         //La méthode switch va vérifier le nom de l'objet affiché et en fonction de ce nom, il va entrer dans la case correspondante
         //Une fois dans la case, le programme choisit le bon titre et la bonne description depuis la classe ObjectsConstants

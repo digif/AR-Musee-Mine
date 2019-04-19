@@ -22,6 +22,4 @@ public class ObjectsConstants
     public static readonly string[] LAMPE = {"Lampe", "Meilleur ami du mineur puisqu'il lui permet tout simplement de voir !" };
     public static readonly string[] POT = {"Pot", "Outil qui permettait aux mineurs de transporter avec eux un liquide." };
 
-    
-   
 }
