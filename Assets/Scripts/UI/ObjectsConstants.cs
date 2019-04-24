@@ -21,5 +21,6 @@ public class ObjectsConstants
     public static readonly string[] GOURDE = {"Gourde", "Permet au mineur de boire en service pour se rafraichir." };
     public static readonly string[] LAMPE = {"Lampe", "Meilleur ami du mineur puisqu'il lui permet tout simplement de voir !" };
     public static readonly string[] POT = {"Pot", "Outil qui permettait aux mineurs de transporter avec eux un liquide." };
+    public static readonly string[] HACHE = { "Hache", "Outil utilisé dans les mines pour tailler les renforcements en bois." };
 
 }
