@@ -1254,7 +1254,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AR-Mine
+  m_Text: AR-enberg
 --- !u!223 &4127959335733377532
 Canvas:
   m_ObjectHideFlags: 0
