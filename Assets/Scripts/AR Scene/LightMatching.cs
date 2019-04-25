@@ -130,9 +130,9 @@ public class LightMatching : MonoBehaviour
                                 green += colorArray[i].g;
                                 blue += colorArray[i].b;
                             }
-                            red /= pixels.Length/4;
-                            green /= pixels.Length/4;
-                            blue /= pixels.Length/4;
+                            red /= pixels.Length/3;
+                            green /= pixels.Length/3;
+                            blue /= pixels.Length/3;
 
                             // Create this average color
                             Color average = new Color(red/255, green/255, blue/255);
