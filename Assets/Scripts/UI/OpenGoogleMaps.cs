@@ -25,8 +25,6 @@ public class OpenGoogleMaps : MonoBehaviour
         }
     }
     public void Test(){
-        Debug.Log("je met ce que je veux");
-        log += "Je met ce que je veux\n";
         StartCoroutine(Open());
     }
 
