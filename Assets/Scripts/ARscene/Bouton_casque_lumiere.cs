@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class Bouton_casque_lumiere : MonoBehaviour
 {
-    //Script qui permet d'allumer la lampe du casque.
+    //Script that turns on or of the light of the
 
-    public GameObject lampe; // Il s'agit de la lampe du casque
+    public GameObject lampe; // This the light source of the helmet.
 
-    // On detecte l'appui sur le bouton à l'aide de la commande OnMouseDown et en fonction de l'état actuel de la lampe du casque,
-    // on l'allume ou on l'éteint en faisant varier son intensité. Nous avons également animé le bouton pour que l'utilisateur
-    // aie un feedback en cas d'appui. L'animation se gère avec le composant Animator du bouton.
+
+    // We detect when the user presses the button with the function OnMouseDown. Depending on the actual state of the light,
+    // we then light it up or close it by modifying its intensity. The button has two animations : one that corresponds to its
+    // normal state (untouched) and a second one that is launched when the user presses the button. Thanks to the GetComponent
+    // method, we can have access to the intensity of the light and we can also have acces to the trigger value which allows us 
+    // to launch the animation of the button.
 
     private void OnMouseDown() {
         if (lampe.GetComponent<Light>().intensity == 0){
             lampe.GetComponent<Light>().intensity = 10;
-            gameObject.GetComponent<Animator>().SetTrigger("trig_lum_casque");//Pour lancer l'animation on trigger la variable préalablement créée trig_lum_casque.
+            gameObject.GetComponent<Animator>().SetTrigger("trig_lum_casque");//To launch the animation we trigger trig_lum_casque.
         }
         else {
             lampe.GetComponent<Light>().intensity = 0;
