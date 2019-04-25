@@ -10,16 +10,20 @@ using UnityEngine;
 public class RotateObject : MonoBehaviour
 {
     // The ARCamera which will give the reference frame for the rotation
-    Transform cam;
+    public Transform cam;
     // Intensity of rotation
     float rotspeed = 3;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        cam = Camera.main.transform;
+        
     }
 
-
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
     // Called everytime a click is detected or hold
     void OnMouseDrag()
     {

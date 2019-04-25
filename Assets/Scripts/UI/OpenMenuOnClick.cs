@@ -85,6 +85,10 @@ public class OpenMenuOnClick : MonoBehaviour
                 titre.text = ObjectsConstants.POT[0];
                 description.text = ObjectsConstants.POT[1];
                 break;
+            case "Image Hache":
+                titre.text = ObjectsConstants.HACHE[0];
+                description.text = ObjectsConstants.HACHE[1];
+                break;
             default :
                 titre.text = "Erreur";
                 description.text = "Objet introuvable.";
