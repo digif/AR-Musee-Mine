@@ -9137,7 +9137,7 @@ GameObject:
   - component: {fileID: 4545927616782182318}
   - component: {fileID: 4545927616782182305}
   m_Layer: 0
-  m_Name: Image hache
+  m_Name: Image Hache
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
