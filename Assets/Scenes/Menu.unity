@@ -1136,7 +1136,7 @@ PrefabInstance:
     - target: {fileID: 2171142742777361438, guid: f406871ed20a2b541acd119dc991f9be,
         type: 3}
       propertyPath: m_Text
-      value: "d\xE9vellopement:\n    Alexandre Canton\n    Adrien Delaurens\n    Tha\xEF-son
+      value: "d\xE9veloppement:\n    Alexandre Canton\n    Adrien Delaurens\n    Tha\xEF-son
         Dang\n    Burak Kucukal\n    Kenneth dieudonne"
       objectReference: {fileID: 0}
     - target: {fileID: 5094795191455394229, guid: f406871ed20a2b541acd119dc991f9be,
